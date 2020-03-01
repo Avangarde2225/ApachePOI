@@ -26,20 +26,20 @@ public class StudentsTest {
         // get the sheet called "data"
         Sheet sheet = wb.getSheet( "data" );
         // check that sheet "data" exists
-        Assert.assertNotEquals( sheet, null );
+        Assert.assertNotEquals( sheet, null , "sheet \"data\" should exist" );
         // find out the row count
         int rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
         // based on row count and six column create a two dimensional array
         Object[][] resultData = new Object[rowCount][6];
         // iterate of rows
-        for(int i = 0; i < rowCount; i++) {
+        for(int row = 0; row < rowCount; row++) {
             // get the current row
-            Row currentRow = sheet.getRow( i );
-            for(int j = 0; j < 6; j++) {
+            Row currentRow = sheet.getRow( row );
+            for(int column = 0; column < 6; column++) {
                 // get cell value from current row
-                Cell cell = currentRow.getCell( j );
+                Cell cell = currentRow.getCell( column );
                 // assign values to your two dimensional array
-                resultData[i][j] = cell.toString();
+                resultData[row][column] = cell.toString();
             }
         }
 

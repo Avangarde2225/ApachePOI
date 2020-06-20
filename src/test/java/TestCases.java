@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.Iterator;
 
 public class TestCases {
-    private static final String FILE_NAME = "src/test/resources/Books.xlsx";
+    private static final String FILE_NAME = "src/test/resources/TestCase.xlsx";
 
     // this method ignores blanks
     @Test

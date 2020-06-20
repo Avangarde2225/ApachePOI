@@ -40,8 +40,10 @@ public class TestCases {
     @Test
     public void test2() throws IOException {
         FileInputStream excelFile = new FileInputStream(new File(FILE_NAME));
+
         Workbook workbook = new XSSFWorkbook(excelFile);
         Sheet datatypeSheet = workbook.getSheetAt(0);
+
         int lastRowNum = datatypeSheet.getLastRowNum();
         int firstRowNum = datatypeSheet.getFirstRowNum();
         int rowCount = lastRowNum - firstRowNum;
@@ -84,8 +86,8 @@ public class TestCases {
     }
 
     @Test(dataProvider = "excelData")
-    public void test3(String c1, String c2, String c3){
-        System.out.println(c1 + c2 + c3);
+    public void test3(String c1, String c2, String c3, String c4, String c5){
+        System.out.println(c1 + c2 + c3 + c4 + c5);
     }
 
 

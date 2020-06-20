@@ -16,10 +16,8 @@ public class Task1Test {
     public Object[][] representativeData() throws IOException {
         FileInputStream excelFile = new FileInputStream( new File("src/test/resources/representative.xlsx") );
         Workbook wb = new XSSFWorkbook( excelFile );
-
         Sheet sh = wb.getSheet( "data" );
         Assert.assertNotEquals( sh, null );
-
         int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
         System.out.println(rowCount);
 

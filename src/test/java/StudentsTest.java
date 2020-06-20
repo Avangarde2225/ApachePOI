@@ -23,12 +23,13 @@ public class StudentsTest {
         FileInputStream excelFile = new FileInputStream( new File("src/test/resources/students.xlsx") );
         // using this input stream I create a Workbook object
         Workbook wb = new XSSFWorkbook( excelFile );
-        // get the sheet called "data"
+        // get the sheet by name called "data"
         Sheet sheet = wb.getSheet( "data" );
         // check that sheet "data" exists
         Assert.assertNotEquals( sheet, null , "sheet \"data\" should exist" );
         // find out the row count
         int rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
+        //System.out.println("Row Number :" + rowCount);
         // based on row count and six column create a two dimensional array
         Object[][] resultData = new Object[rowCount][6];
         // iterate of rows

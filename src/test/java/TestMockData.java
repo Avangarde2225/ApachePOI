@@ -17,6 +17,7 @@ public class TestMockData {
         FileInputStream excelFile = new FileInputStream(new File(FILE_NAME));
         Workbook workbook = new XSSFWorkbook(excelFile);
         Sheet datatypeSheet = workbook.getSheetAt(0);
+
         int lastRowNum = datatypeSheet.getLastRowNum();
         int firstRowNum = datatypeSheet.getFirstRowNum();
         int rowCount = lastRowNum - firstRowNum;
